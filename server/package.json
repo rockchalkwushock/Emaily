@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
+  "license": "MIT",
+  "scripts": {
+    "now-start": "node index.js"
+  },
+  "dependencies": {
+    "express": "~4.15.3"
+  },
+  "devDependencies": {
+    "eslint": "~4.3.0",
+    "eslint-config-equimper": "~2.2.1",
+    "eslint-config-prettier": "~2.3.0",
+    "prettier": "~1.5.3"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "engines": {
+    "node": "^8.x.x"
+  },
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "files": ["./index.js", "now.json", "package.json", "yarn.lock"],
+  "name": "grider-fullstack-api"
+}
