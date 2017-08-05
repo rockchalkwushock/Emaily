@@ -1,14 +1,23 @@
-const GoogleStrategy = require('passport-google-oauth20').Strategy
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20'
 
-require('dotenv-safe').load()
+import env from '../../config/environment'
+import { User } from '../../models'
 
-module.exports = new GoogleStrategy(
+export default new GoogleStrategy(
   {
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: '/auth/google/callback'
+    clientID: env.GOOGLE_CLIENT_ID,
+    clientSecret: env.GOOGLE_CLIENT_SECRET,
+    callbackURL: '/auth/google/callback',
+    proxy: true
   },
-  (accessToken, refreshToken, profile, done) => {
-    console.log(accessToken)
+  async (accessToken, refreshToken, profile, done) => {
+    try {
+      const existingUser = await User.findOne({ googleId: profile.id })
+      if (existingUser) return done(null, existingUser)
+      const newUser = await User.create({ googleId: profile.id })
+      return done(null, newUser)
+    } catch (e) {
+      throw e
+    }
   }
 )

@@ -1,3 +1,6 @@
-const routes = require('./routes')
+import database from './database'
+import env from './environment'
+import middlewares from './middlewares'
+import routes from './routes'
 
-module.exports = routes
+export { database, env, middlewares, routes }

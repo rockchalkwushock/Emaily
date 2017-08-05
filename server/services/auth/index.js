@@ -1,11 +1,20 @@
-const passport = require('passport')
+import passport from 'passport'
 
-const GoogleLogin = require('./GoogleStrategy')
+import { User } from '../../models'
+import GoogleLogin from './GoogleStrategy'
+
+passport.serializeUser((user, done) => {
+  done(null, user.id)
+})
+
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(user => done(null, user))
+})
 
 passport.use(GoogleLogin)
 
-module.exports = passport.authenticate('google', {
+export const authGoogleInit = passport.authenticate('google', {
   scope: ['profile', 'email']
 })
-
-// http://localhost:5000/auth/google
+export const authGoogleEnd = passport.authenticate('google')
+// http://localhost:3000/auth/google

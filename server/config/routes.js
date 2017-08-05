@@ -1,6 +1,13 @@
-const authGoogle = require('../services')
+import { authGoogleInit, authGoogleEnd } from '../services'
 
-module.exports = app => {
-  app.get('/auth/google', authGoogle)
-  app.get('/auth/google/callback', authGoogle)
+export default app => {
+  app.get('/auth/google', authGoogleInit)
+  app.get('/auth/google/callback', authGoogleEnd)
+  app.get('/api/logout', (req, res) => {
+    req.logout()
+    res.send(req.user)
+  })
+  app.get('/api/current_user', (req, res) => {
+    res.send(req.user)
+  })
 }

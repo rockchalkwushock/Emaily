@@ -9,12 +9,20 @@
     "now-start": "node index.js"
   },
   "dependencies": {
+    "body-parser": "~1.17.2",
+    "cookie-session": "~1.3.0",
     "dotenv-safe": "~4.0.4",
     "express": "~4.15.3",
+    "mongoose": "~4.11.5",
+    "morgan": "~1.8.2",
     "passport": "~0.3.2",
     "passport-google-oauth20": "~1.0.0"
   },
   "devDependencies": {
+    "babel-polyfill": "~6.23.0",
+    "babel-preset-env": "~1.6.0",
+    "babel-preset-stage-2": "~6.24.1",
+    "babel-register": "~6.24.1",
     "eslint": "~4.3.0",
     "eslint-config-equimper": "~2.2.1",
     "eslint-config-prettier": "~2.3.0",
