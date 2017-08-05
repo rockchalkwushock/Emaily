@@ -7,9 +7,9 @@
     "NODE_ENV": "production"
   },
   "files": [
+    "./dist",
     ".env",
     ".env.example",
-    "./index.js",
     "now.json",
     "package.json",
     "yarn.lock"
