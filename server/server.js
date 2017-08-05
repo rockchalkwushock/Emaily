@@ -8,5 +8,5 @@ middlewares(app)
 routes(app)
 
 app.listen(env.PORT, () => {
-  console.log(`App listening on port 3000 in ${process.env.NODE_ENV}!`)
+  console.log(`App listening on port ${env.PORT} in ${process.env.NODE_ENV}!`)
 })
