@@ -5,15 +5,20 @@
   "author": "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
   "license": "MIT",
   "scripts": {
+    "dev": "nodemon index.js",
     "now-start": "node index.js"
   },
   "dependencies": {
-    "express": "~4.15.3"
+    "dotenv-safe": "~4.0.4",
+    "express": "~4.15.3",
+    "passport": "~0.3.2",
+    "passport-google-oauth20": "~1.0.0"
   },
   "devDependencies": {
     "eslint": "~4.3.0",
     "eslint-config-equimper": "~2.2.1",
     "eslint-config-prettier": "~2.3.0",
+    "nodemon": "~1.11.0",
     "prettier": "~1.5.3"
   }
 }
