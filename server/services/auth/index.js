@@ -16,5 +16,7 @@ passport.use(GoogleLogin)
 export const authGoogleInit = passport.authenticate('google', {
   scope: ['profile', 'email']
 })
-export const authGoogleEnd = passport.authenticate('google')
-// http://localhost:3000/auth/google
+export const authGoogleEnd = passport.authenticate('google', {
+  failureRedirect: '/'
+})
+// http://localhost:4000/auth/google

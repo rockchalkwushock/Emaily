@@ -18,7 +18,7 @@ const testConfig = {
 
 const defaultConfig = {
   COOKIE_SECRET: process.env.COOKIE_SECRET,
-  PORT: process.env.PORT || 4000
+  PORT: process.env.PORT || 5000
 }
 
 /**
