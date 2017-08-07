@@ -1,8 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import 'materialize-css/dist/css/materialize.min.css'
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import { App } from './components'
+import store from './redux'
+
+const Root = () =>
+  <Provider store={store}>
+    <App />
+  </Provider>
+
+render(<Root />, document.getElementById('root'))
+registerServiceWorker()
