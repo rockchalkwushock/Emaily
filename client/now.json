@@ -1,0 +1,17 @@
+{
+  "dotenv": true,
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "files": [
+    "./build",
+    "./public",
+    "./src",
+    ".env",
+    ".env.example",
+    "now.json",
+    "package.json",
+    "yarn.lock"
+  ],
+  "name": "emaily"
+}
