@@ -1,4 +1,5 @@
-import { authGoogleInit, authGoogleEnd } from '../services'
+import { authGoogleInit, authGoogleEnd, createCharge } from '../services'
+import { requireLogin } from '../utils'
 
 export default app => {
   app.get('/auth/google', authGoogleInit)
@@ -11,5 +12,13 @@ export default app => {
   })
   app.get('/api/current_user', (req, res) => {
     res.send(req.user)
+  })
+  app.post('/api/stripe', requireLogin, async (req, res) => {
+    try {
+      const user = await createCharge(req)
+      res.send(user)
+    } catch (e) {
+      throw e
+    }
   })
 }

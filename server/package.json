@@ -21,7 +21,8 @@
     "mongoose": "~4.11.5",
     "morgan": "~1.8.2",
     "passport": "~0.3.2",
-    "passport-google-oauth20": "~1.0.0"
+    "passport-google-oauth20": "~1.0.0",
+    "stripe": "~4.23.2"
   },
   "devDependencies": {
     "babel-loader": "~7.1.1",
