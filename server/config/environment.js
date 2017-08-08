@@ -3,13 +3,15 @@ require('dotenv-safe').load()
 const devConfig = {
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID_DEV,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET_DEV,
-  MONGO_URI: process.env.MONGO_URI_DEV
+  MONGO_URI: process.env.MONGO_URI_DEV,
+  REDIRECT_DOMAIN: process.env.REDIRECT_DOMAIN_DEV
 }
 
 const prodConfig = {
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID_PROD,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET_PROD,
-  MONGO_URI: process.env.MONGO_URI_PROD
+  MONGO_URI: process.env.MONGO_URI_PROD,
+  REDIRECT_DOMAIN: process.env.REDIRECT_DOMAIN_PROD
 }
 
 const testConfig = {
@@ -19,6 +21,7 @@ const testConfig = {
 const defaultConfig = {
   COOKIE_SECRET: process.env.COOKIE_SECRET,
   PORT: process.env.PORT || 5000,
+  SENDGRID_KEY: process.env.SENDGRID_KEY,
   STRIPE_SECRET: process.env.STRIPE_SECRET
 }
 

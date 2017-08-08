@@ -3,5 +3,6 @@ import mongoose from 'mongoose'
 
 export default conf => {
   mongoose.Promise = global.Promise
-  mongoose.connect(conf)
+  // must pass following option to get rid of deprecation logs.
+  mongoose.connect(conf, { useMongoClient: true })
 }

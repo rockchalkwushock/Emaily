@@ -1,3 +1,4 @@
+import Survey from './Survey'
 import User from './User'
 
-export { User }
+export { Survey, User }
