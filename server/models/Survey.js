@@ -4,7 +4,7 @@ import RecipientSchema from './Recipient'
 
 const surveySchema = new Schema({
   title: String,
-  body: String,
+  message: String,
   subject: String,
   recipients: [RecipientSchema],
   yes: { type: Number, default: 0 },

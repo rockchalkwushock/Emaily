@@ -42,7 +42,6 @@ class Mailer extends helper.Mail {
       body: this.toJSON()
     })
     const response = await this.sgApi.API(request)
-    console.log(response) // FIXME: receiving 202, locked out of account
     return response
   }
 }
