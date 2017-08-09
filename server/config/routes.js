@@ -2,7 +2,9 @@ import {
   authGoogleInit,
   authGoogleEnd,
   createCharge,
-  createSurvey
+  createSurvey,
+  getSurveys,
+  webhook
 } from '../services'
 import { requireCredits, requireLogin } from '../utils'
 
@@ -25,12 +27,22 @@ export default app => {
       const user = await createCharge(req)
       res.send(user)
     } catch (e) {
+      // FIXME handle with status & error message
       throw e
     }
   })
   // Survey Routes
   app.get('/api/surveys/:surveyId/:choice', (req, res) => {
     res.send('Thanks for voting!')
+  })
+  app.get('/api/surveys', requireLogin, async (req, res) => {
+    try {
+      const surveys = await getSurveys(req)
+      res.send(surveys)
+    } catch (e) {
+      // FIXME handle with status & error message
+      throw e
+    }
   })
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
     try {
@@ -40,4 +52,5 @@ export default app => {
       res.status(422).send(err)
     }
   })
+  app.post('/api/surveys/webhooks', (req, res) => webhook(req, res))
 }

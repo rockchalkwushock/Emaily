@@ -1,6 +1,15 @@
-# a;ldfja;sdfja;sflask;f
+# Emaily Server
 
-current api: [https://grider-fullstack-api-pkhdljlrld.now.sh](https://grider-fullstack-api-pkhdljlrld.now.sh)
+## Running in Development
 
-If this changes you must go change it in the console under `email-prod`!!!
+I had issues using `localtunnel` as was used in the tutorial so I used `ngrok`.
 
+```sh
+yarn global add ngrok
+pwd # /server
+ngrok http 5000
+# copy the 'https' url & add to the Sendgrid webhook url option under 'click notifications'
+```
+
+1. The `ngrok` server must be running as well as the development server.
+2. As soon as the `ngrok` server is closed the link generated is destroyed and must be replaced in the Sendgrid console and anywhere else it is being used in the code base.
