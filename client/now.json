@@ -9,7 +9,6 @@
     "./src",
     ".env",
     ".env.example",
-    "now.json",
     "package.json",
     "yarn.lock"
   ],
